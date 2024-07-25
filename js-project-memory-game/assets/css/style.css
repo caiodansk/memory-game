@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; 
+    background-color: black;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(8, 150px); 
+    gap: 15px; 
+    max-width: 960px; 
+    margin: auto;
+   
+}
+
+.card {
+    position: relative;
+    width: 150px;
+    height: 200px; 
+    perspective: 1000px; 
+    margin-left: -10rem;
+}
+
+.card-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.card .front {
+    transform: rotateY(180deg); 
+}
+
+.card.flipped .front {
+    transform: rotateY(0deg); 
+}
+
+.card.flipped .back {
+    transform: rotateY(180deg); 
+}
+
+.card-image.back {
+    transform: rotateY(0deg); 
+}
